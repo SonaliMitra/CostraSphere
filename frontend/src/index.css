@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-lavender-50 via-white to-lavender-100 min-h-screen text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-glow rounded-2xl;
+  }
+  .glass-dark {
+    @apply bg-lavender-900/10 backdrop-blur-xl border border-lavender-200/50 shadow-glow rounded-2xl;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-lavender-500 to-lavender-700 text-white px-6 py-2.5 rounded-xl font-medium
+           hover:from-lavender-600 hover:to-lavender-800 transition-all shadow-glow hover:shadow-glow-lg;
+  }
+  .btn-secondary {
+    @apply bg-white/80 text-lavender-700 px-6 py-2.5 rounded-xl font-medium border border-lavender-200
+           hover:bg-lavender-50 transition-all;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-lavender-200 bg-white/80 focus:outline-none
+           focus:ring-2 focus:ring-lavender-400 focus:border-transparent transition-all;
+  }
+  .card-stat {
+    @apply glass p-6 hover:shadow-glow-lg transition-all duration-300;
+  }
+  .table-elegant {
+    @apply w-full text-sm;
+  }
+  .table-elegant th {
+    @apply text-left py-3 px-4 text-lavender-700 font-semibold border-b border-lavender-100;
+  }
+  .table-elegant td {
+    @apply py-3 px-4 border-b border-lavender-50;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.telecom-route {
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.8));
+}
+
+.telecom-glow-marker {
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.9));
+}
+
+@keyframes routePulse {
+  0%, 100% { stroke-opacity: 0.6; }
+  50% { stroke-opacity: 1; }
+}
+
+.animated-route {
+  animation: routePulse 2s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-lavender-300 rounded-full;
+}
